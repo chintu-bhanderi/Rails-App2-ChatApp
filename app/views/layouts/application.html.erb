@@ -2,16 +2,11 @@
 <html>
   <head>
     <title>MessageMe</title>
-    <%= favicon_link_tag %>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div class="ui small inverted menu">
       <div class="ui container">
@@ -21,17 +16,5 @@
     <div class="ui container">
       <%= yield %>
     </div>
-
-    <script>
-      $(document).ready(function() {
-        $('#language').change(function() {
-          var selectedValue = $(this).val();
-          if (selectedValue) {
-            window.location.href = selectedValue;
-          }
-        });
-      });
-    </script>
-
   </body>
 </html>
