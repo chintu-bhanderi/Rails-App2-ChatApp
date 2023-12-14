@@ -6,4 +6,11 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+$(document).on('turbolinks:load', function() {
+    $('.ui.dropdown').dropdown();
+    $('.message .close').on('click', function() {
+      $(this).closest('.message').transition('fade');
+    });
+})
+
 export { application }
